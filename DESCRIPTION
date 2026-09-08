@@ -1,0 +1,27 @@
+Package: projCorr
+Type: Package
+Title: Projection Correlation Independence Tests
+Version: 0.1.0
+Authors@R: c(
+    person("Wang", role = "aut"),
+    person("Chia", email = "xzm1@ruc.edu.cn", role = c("aut", "cre"))
+    )
+Description: Implements the projection correlation independence test of Zhu
+    et al. (2017), and the improved projection correlation and refitted
+    cross-validation tests of Zhang and Zhu (2024). The package keeps the
+    dependence estimates, test statistics, and p-value calibration explicit.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.2.0)
+Imports:
+    Rcpp,
+    stats
+LinkingTo:
+    Rcpp,
+    RcppArmadillo
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Config/roxygen2/version: 7.3.3
+SystemRequirements: C++17, optional OpenMP
+RoxygenNote: 7.3.3

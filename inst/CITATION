@@ -1,0 +1,23 @@
+citHeader("To cite the projection correlation method, use:")
+
+bibentry(
+  bibtype = "Article",
+  title = "Projection correlation between two random vectors",
+  author = c(
+    person("Liping", "Zhu"), person("Kai", "Xu"),
+    person("Runze", "Li"), person("Wei", "Zhong")
+  ),
+  journal = "Biometrika", year = "2017", volume = "104", number = "4",
+  pages = "829--843", doi = "10.1093/biomet/asx043"
+)
+
+citHeader("To cite the improved and RCV methods, use:")
+
+bibentry(
+  bibtype = "Article",
+  title = "Projective independence tests in high dimensions: the curses and the cures",
+  author = c(person("Yaowu", "Zhang"), person("Liping", "Zhu")),
+  journal = "Biometrika", year = "2024", volume = "111", number = "3",
+  pages = "1013--1027", doi = "10.1093/biomet/asad070"
+)
+
