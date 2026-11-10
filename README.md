@@ -1,4 +1,31 @@
-# projCorr
+## Answer Summary
+
+This R package **projCorr** does include test data generation, but they're not standalone reusable functions - they use base R patterns:
+
+**Test data generation example** (README.md, lines 45-52):
+```r
+set.seed(2024)
+n <- 100
+x <- matrix(rnorm(n * 5), nrow = n)
+y <- cbind(
+  x[, 1]^2 + rnorm(n, sd = 0.3),
+  sin(x[, 2]) + rnorm(n, sd = 0.3),
+  matrix(rnorm(n * 3), nrow = n)
+)
+```
+
+**Base R functions used:**
+- `set.seed()` - reproducible results
+- `rnorm()` - normal random numbers  
+- `matrix()` / `cbind()` - data structure creation
+- `sin()` - nonlinear relationships
+
+**Test framework:** Uses `testthat` package
+
+**Actual test functions provided by the package:**
+- `pcor_test()` - classic projection-correlation test
+- `ipcor_test()` - improved projection-correlation test  
+- `ipcor_rcv_test()` - refitted cross-validation test
 
 `projCorr` provides projection-based tests of unconditional independence
 between two random vectors. It implements the classic projection correlation

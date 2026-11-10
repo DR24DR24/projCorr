@@ -1,0 +1,30 @@
+# Explanations
+
+## Answer to: Does pcor_test return the calculated projected correlation?
+
+Yes. The `pcor_test()` function returns an object compatible with `htest` that includes:
+- `estimate` – the projected correlation estimate
+- `raw_estimate` – the raw estimate
+- `statistic` – the test statistic
+- `p.value` – the p-value
+- `details` – additional details
+
+The projected correlation value is contained in the `estimate` (and/or `raw_estimate`) field.
+
+## Scripts created
+
+### `generate_data.R`
+Generates test data based on the README.md example:
+- `set.seed(2024)`, `n <- 100`
+- `x`: matrix of 5 normal random variables (n × 5)
+- `y`: combination of `x[,1]^2`, `sin(x[,2])`, and 3 normal noise variables
+- Saves to `data_YYYYMMDD_HHMMSS_x.csv` and `data_YYYYMMDD_HHMMSS_y.csv` (timestamped CSV files, readable in Excel/text editors)
+
+### `run_correlation_analysis.R`
+Runs three projection correlation tests:
+- `pcor_test(x, y, n_perm = 999, seed = 1)`
+- `ipcor_test(x, y)`
+- `ipcor_rcv_test(x, y, n_pairs = ceiling(log(n)), seed = 1)`
+- Auto-detects the most recent `data_*_x.csv` / `data_*_y.csv` pair (or accepts paths as arguments)
+- Writes results to `results_<data_filename>_YYYYMMDD_HHMMSS.txt`
+- Requires the `projCorr` package to be installed (see installation instructions in the script if missing)

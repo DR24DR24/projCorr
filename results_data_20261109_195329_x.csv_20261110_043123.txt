@@ -1,0 +1,50 @@
+========================================
+Projection Correlation Test Results
+========================================
+
+Data file: ./data_20261109_195329_x.csv 
+n = 100 
+x dimensions: 100 x 5 
+y dimensions: 100 x 5 
+
+----------------------------------------
+pcor_test(x, y, n_perm = 999, seed = 1)
+----------------------------------------
+
+	Projection correlation permutation test
+
+data:  x and y
+T = 0.27747, permutations = 999, p-value = 0.001
+alternative hypothesis: true correlation is greater than 0
+sample estimates:
+       PC 
+0.4889854 
+
+
+----------------------------------------
+ipcor_test(x, y)
+----------------------------------------
+
+	Improved projection correlation asymptotic test
+
+data:  x and y
+Z = 12.093, = , p-value < 2.2e-16
+alternative hypothesis: true correlation is greater than 0
+sample estimates:
+      IPC 
+0.4135423 
+
+
+----------------------------------------
+ipcor_rcv_test(x, y, n_pairs = ceiling(log(n)), seed = 1)
+----------------------------------------
+
+	Improved projection correlation RCV asymptotic test
+
+data:  x and y
+Z = 13.278, = , p-value < 2.2e-16
+alternative hypothesis: true RCV T is greater than 0
+sample estimates:
+    RCV T 
+0.2655577 
+
