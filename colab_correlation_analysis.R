@@ -49,7 +49,7 @@ cat("  n =", nrow(x), "| x:", paste(dim(x), collapse = " x "),
     "| y:", paste(dim(y), collapse = " x "), "\n\n")
 
 #-----------------------------------------------------------------------------#
-# 3. Три теста корреляции
+# 3. Three correlation tests
 #-----------------------------------------------------------------------------#
 cat("--------------------------------------------\n")
 cat("pcor_test(x, y, n_perm = 999, seed = 1)\n")
@@ -100,13 +100,13 @@ cat("--------------------------------------------\n")
 print(ipcor_rcv_result)
 sink()
 
-cat("\nРезультаты сохранены в:", result_file, "\n")
+cat("\nResults saved to:", result_file, "\n")
 
 #-----------------------------------------------------------------------------#
 # 5. Brief p-value summary
 #-----------------------------------------------------------------------------#
 cat("\n============================================\n")
-cat("Краткая выжимка p-значений\n")
+cat("Brief p-value summary\n")
 cat("============================================\n")
 cat(sprintf("pcor_test : p-value = %.4f, estimate = %.4f\n",
             pcor_result$p.value, pcor_result$estimate))
@@ -115,4 +115,4 @@ cat(sprintf("ipcor_test: p-value = %.4f, estimate = %.4f\n",
 cat(sprintf("ipcor_rcv : p-value = %.4f, estimate = %.4f\n",
             ipcor_rcv_result$p.value, ipcor_rcv_result$estimate))
 
-cat("\nГотово. Файл результатов доступен в панели файлов Colab.\n")
+cat("\nReady. Results file available in Colab files panel.\n")

@@ -19,15 +19,6 @@ Auto-detects the most recent `data_*_x.csv` / `data_*_y.csv` pair, or accepts fi
 
 ## Python scripts
 
-### `projection_correlation.py`
-Core implementation of Projection Correlation (PC) for transfer learning / convolutional layer selection.
-- Exact computation via double-centered arccos kernel (Zhu et al. 2017; Di et al. 2025).
-- Chunked batched computation along the anchor index `r` — memory reduced from O(n³) to O(chunk_size · n²).
-- Optimised 1D target path (`projection_corr_1dy`) for scalar/categorical labels.
-- Approximate Monte Carlo mode (`projection_corr_approximate`, O(K · n²)) for very large datasets.
-- Non-asymptotic exponential bound calculator (Theorem 1 & Lemma 1.2).
-- Permutation independence test (`permutation_test`).
-- Returns a scalar `float` PC value in [0, 1] — no hypothesis test object, no p-value.
 
 ### `projcorr.py`
 PyTorch implementation of Projection Correlation (PC) and Improved Projection Correlation (IPC / IPC-RCV) independence tests on GPU.
