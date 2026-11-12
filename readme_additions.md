@@ -58,8 +58,7 @@ Command-line runner for the three independence tests (`pcor_test`, `ipcor_test`,
 - Automatic GPU (CUDA) detection; prints GPU model when available.
 - Saves formatted results to `results_<data_filename>_YYYYMMDD_HHMMSS.txt`.
 
-### `colab_correlation_analysis.py`
-Google Colab variant of `run_correlation_analysis.py` with Russian-language console output and GPU setup hints.
+
 - Checks for CUDA, reports GPU name and total memory.
 - Falls back to CPU if no GPU is detected.
 - Designed to be executed in Google Colab with T4 GPU runtime.

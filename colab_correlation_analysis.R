@@ -1,30 +1,30 @@
 #=============================================================================#
 #  colab_correlation_analysis.R                                               #
-#  Вариант run_correlation_analysis.R для Google Colab                        #
-#  Сохраняет логику commandArgs + авто-détect файлов данных                   #
-#  Без генерации данных                                                       #
+#  Variant of run_correlation_analysis.R for Google Colab                        #
+#  Preserves commandArgs logic + auto-detection of data files                   #
+#  Without data generation                                                       #
 #=============================================================================#
 
 cat("============================================\n")
-cat("  Проецирующая корреляция в Google Colab   \n")
+cat("  Projection Correlation in Google Colab\n")
 cat("============================================\n\n")
 
 #-----------------------------------------------------------------------------#
-# 1. Установка projCorr (если нет)
+# 1. Installation of projCorr (if not present)
 #-----------------------------------------------------------------------------#
 if (!requireNamespace("projCorr", quietly = TRUE)) {
-  cat("Устанавливаю projCorr...\n")
+  cat("Installing projCorr...\n")
   if (!requireNamespace("remotes", quietly = TRUE))
     install.packages("remotes", repos = "https://cloud.r-project.org")
   remotes::install_github("Chia202/projCorr")
-  cat("projCorr установлен.\n\n")
+  cat("projCorr installed.\n\n")
 } else {
-  cat("projCorr уже установлен.\n\n")
+  cat("projCorr already installed.\n\n")
 }
 library(projCorr)
 
 #-----------------------------------------------------------------------------#
-# 2. Пути к данным: аргументы или авто-déetect
+# 2. Data paths: arguments or auto-detection
 #-----------------------------------------------------------------------------#
 args <- commandArgs(trailingOnly = TRUE)
 if (length(args) >= 2) {
@@ -71,7 +71,7 @@ ipcor_rcv_result <- ipcor_rcv_test(x, y, n_pairs = ceiling(log(n)), seed = 1)
 print(ipcor_rcv_result)
 
 #-----------------------------------------------------------------------------#
-# 4. Сохранение результатов в текущую директорию Colab
+# 4. Saving results to the current Colab directory
 #-----------------------------------------------------------------------------#
 ts <- format(Sys.time(), "%Y%m%d_%H%M%S")
 data_basename <- tools::file_path_sans_ext(basename(x_file))
@@ -103,7 +103,7 @@ sink()
 cat("\nРезультаты сохранены в:", result_file, "\n")
 
 #-----------------------------------------------------------------------------#
-# 5. Краткая сводка p-значений
+# 5. Brief p-value summary
 #-----------------------------------------------------------------------------#
 cat("\n============================================\n")
 cat("Краткая выжимка p-значений\n")
