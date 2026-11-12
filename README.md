@@ -112,6 +112,24 @@ skill and GPT-5.6 Sol. The implementation retains pure-R reference formulas and
 uses RcppArmadillo for computationally expensive kernels. Optimized results are
 tested against the reference implementation.
 
+## Python / GPU (PyTorch) Implementation
+
+The repository also includes a fully vectorized Python implementation (`projcorr.py`) with support for CUDA GPU acceleration:
+
+- [`pcor_test(x, y, n_perm=999, seed=1, device="cuda")`](file:///d:/googledisk6/user/goit/Diplom/var1_Di/code/projCorr/projcorr.py)
+- [`ipcor_test(x, y, device="cuda")`](file:///d:/googledisk6/user/goit/Diplom/var1_Di/code/projCorr/projcorr.py)
+- [`ipcor_rcv_test(x, y, n_pairs=ceil(log(n)), seed=1, device="cuda")`](file:///d:/googledisk6/user/goit/Diplom/var1_Di/code/projCorr/projcorr.py)
+
+### Quick Run (Python)
+```bash
+python run_correlation_analysis.py
+```
+
+### Run in Google Colab (GPU)
+```bash
+python colab_correlation_analysis.py
+```
+
 ## Authors and license
 
 Authors: Wang and Chia <xzm1@ruc.edu.cn>

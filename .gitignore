@@ -47,3 +47,9 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Python artifacts
+__pycache__/
+*.pyc
+results_py_*.txt
+
